@@ -1,3 +1,4 @@
+import CartWidger from '../CartWidget/CartWidget';
 import './NavBar.css'
 
 const NavBar = () => {
@@ -12,7 +13,7 @@ const NavBar = () => {
                     <li><a href="#" >Celulares y Tablets</a></li>
                 </ul>
             </nav>
-            <a class="carrito" href="#"><button><i class="fa-solid fa-cart-shopping"></i></button></a>
+            <CartWidger/>
         </div>
     )
 }
