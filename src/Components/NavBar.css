@@ -1,0 +1,46 @@
+.nombre{
+    color: #edf0f1;
+    cursor: pointer;
+}
+
+li, a, button {
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.headerNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 
+    30px 10%;
+    background-color: #24252A;
+}
+
+.navLinks{
+    list-style: none;
+    margin: auto;
+    padding: auto;
+}
+
+.navLinks li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navLinks li a {
+    transition: all 0.3s ease 0s;
+}
+
+.navLinks li a:hover {
+    color: #0088a9;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+}
