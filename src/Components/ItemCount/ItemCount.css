@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-.divBotones button {
+.boton {
     border: none;
     padding: auto;
     margin: 0px 10px;
@@ -17,4 +17,12 @@
 
 .botonSuma {
     background-color: #0088a9;
+}
+
+.botonAgregar {
+    border: none;
+    padding: auto;
+    margin: 0px 10px;
+    height: 30px;
+    width: 70px;
 }
