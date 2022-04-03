@@ -3,10 +3,10 @@ import './NavBar.css'
 
 const NavBar = () => {
     return (
-        <div class="headerNav">
-            <h4 class="nombre">Ecommerce</h4>
+        <div className="headerNav">
+            <h4 className="nombre">Ecommerce</h4>
             <nav>
-                <ul class="navLinks">
+                <ul className="navLinks">
                     <li><a href="#" >Televisores</a></li>
                     <li><a href="#" >Computadoras</a></li>
                     <li><a href="#" >Consolas</a></li>

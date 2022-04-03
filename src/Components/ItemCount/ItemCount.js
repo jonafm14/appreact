@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import './ItemCount.css' 
-
+import Button from '@mui/material/Button'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const ItemCount = ({initial,stock,onAdd}) => {
     const [count,setCount] = useState(0);
@@ -21,10 +21,10 @@ const ItemCount = ({initial,stock,onAdd}) => {
     return (
         <div>
             <div className='divBotones'>
-                <button onClick={increment} className='boton botonSuma' >+</button>
+                <Button onClick={increment} className='boton botonSuma' variant="contained" color="success" size="small">+</Button>
                     <p>{count}</p>
-                <button onClick={decrement} className='boton botonResta' >-</button>
-                <button className='botonAgregar' onClick={() => onAdd(count)} >Agregar</button>
+                <Button onClick={decrement} className='boton botonResta' variant="contained" color="error" size="small">-</Button>
+                <Button className='botonAgregar' onClick={() => onAdd(count)} variant="contained"><AddShoppingCartIcon  fontSize="small"></AddShoppingCartIcon></Button>
             </div>
         </div>
     )
