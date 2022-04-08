@@ -11,4 +11,3 @@ const ItemList = ({ products }) => {
 
 
 export default ItemList
-

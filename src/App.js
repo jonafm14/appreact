@@ -1,6 +1,7 @@
 import NavBar from '././Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemCount from './Components/ItemCount/ItemCount';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   const handleOnAdd = (quantity) => {
@@ -9,7 +10,8 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <ItemListContainer greeting={'Productos'}/>
+      <ItemDetailContainer/>
+      <ItemListContainer/>
       <ItemCount initial={0} stock={10} onAdd={handleOnAdd} />
       </div>
   );

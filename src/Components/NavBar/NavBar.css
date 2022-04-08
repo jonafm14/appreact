@@ -1,34 +1,57 @@
-.nombre{
-    color: #edf0f1;
-    cursor: pointer;
-}
-
-li, a {
-    font-weight: 500;
-    font-size: 16px;
-    color: #edf0f1;
-    text-decoration: none;
-}
-
-.headerNav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 20px;
-    background-color: #24252A;
-}
-
-.navLinks{
-    list-style: none;
-    margin: auto;
-    padding: auto;
-}
-
-.navLinks li {
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-.navLinks li a {
+* {
+    padding: 0;
+    margin: 0;
     color: #fff;
+}
+
+.headerNav {
+    display: grid;
+    grid-template-areas: 
+    "logo buscador cuenta"
+    "categoria categoria categoria";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40px 25px;
+    background-color: #212529;
+}
+
+.headerNav__logo {
+    grid-area: logo;
+    justify-self: end;
+    align-self: center;
+}
+
+.headerNav__buscador {
+    grid-area: buscador;
+    justify-self: center;
+    align-self: center;
+}
+
+.headerNav__buscador button{
+    color: #000;
+}
+
+.headerNav__cuenta {
+    grid-area: cuenta;
+    display: flex;
+    align-items: center;
+}
+
+.headerNav__cuenta a {
+    padding-right: 20px;
+}
+
+.headerNav__categorias {
+    grid-area: categoria;
+    background-color: rgba(66, 74, 82, 0.345)
+}
+
+.headerNav__categorias__links {
+    display: flex;
+    justify-content: center;
+}
+
+.headerNav__categorias__links li{
+    padding: 0px 20px;
+    text-decoration: none;
+    list-style: none;
 }
