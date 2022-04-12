@@ -1,8 +1,11 @@
 * {
     padding: 0;
     margin: 0;
+    text-decoration: none;
     color: #fff;
 }
+
+
 
 .headerNav {
     display: grid;
@@ -10,7 +13,7 @@
     "logo buscador cuenta"
     "categoria categoria categoria";
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40px 25px;
+    grid-template-rows: 50px 25px;
     background-color: #212529;
 }
 
@@ -42,7 +45,7 @@
 
 .headerNav__categorias {
     grid-area: categoria;
-    background-color: rgba(66, 74, 82, 0.345)
+    background-color: rgba(66, 74, 82, 0.345);
 }
 
 .headerNav__categorias__links {
@@ -51,6 +54,21 @@
 }
 
 .headerNav__categorias__links li{
+    padding: 0px 20px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.activeOption {
+    padding: 0px 20px;
+    text-decoration: none;
+    list-style: none;
+    color: #ced4da;
+    border-left: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+}
+
+.option {
     padding: 0px 20px;
     text-decoration: none;
     list-style: none;

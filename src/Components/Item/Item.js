@@ -1,11 +1,11 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const Item = ({name,img,description}) => {
+const Item = ({id,name,img,description}) => {
   return (
     
     <Card sx={{ maxWidth: 345 }} >
@@ -16,7 +16,7 @@ const Item = ({name,img,description}) => {
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" color="text.primary">
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -25,8 +25,8 @@ const Item = ({name,img,description}) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Ver detalle
+        <Button variant="contained" >
+          <Link to={`/detail/${id}`} >Ver detalle</Link>
         </Button>
       </CardActions>
     </Card>
