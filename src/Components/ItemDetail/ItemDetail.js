@@ -4,14 +4,51 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { useState } from 'react';
+import Button from '@mui/material/Button';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import TextField from '@mui/material/TextField';
+import Switch from '@mui/material/Switch';
+import { useNavigate, Link } from 'react-router-dom'
+import './ItemDetail.css'
 
-const ItemDetail = ({ name, img, description, price, stock }) => {
-    const handleOnAdd = (quantity) => {
-        console.log(`Se agregaron ${quantity} productos`);
+
+const InputCount = ({onAdd, stock, initial=1}) => {
+    const [count, setCount] = useState(initial)
+    console.log(stock);
+    const handleChange = (e) => {
+        if(e.target.value <= stock && e.target.value > 0 ) {
+            setCount(e.target.value)
+        }
     }
+
     return (
         <div>
+            <TextField size="small" id="outlined-number" label="Number" type="number"InputLabelProps={{shrink: true,}} onChange={handleChange} value={count} />
+            <Button variant="contained" onClick={() => onAdd(count)}><AddShoppingCartIcon fontSize="medium"></AddShoppingCartIcon></Button>
+        </div>
+    )
+}
+
+
+
+
+
+const ItemDetail = ({id, name, img, description, price, stock }) => {
+    const [typeInput, setTypeInput] = useState(true)
+    
+    const handleAdd = (count) => {
+        setQuantity(count)
+    }
+
+    const Count = typeInput ? ItemCount : InputCount
+
+    const [quantity, setQuantity] =useState(0)
+
+    return (
+        <div >
             <Card sx={{ maxWidth: 345 }}>
+            
                 <CardActionArea>
                     <CardMedia
                         component="img"
@@ -25,8 +62,9 @@ const ItemDetail = ({ name, img, description, price, stock }) => {
                         <Typography variant="body2" color="text.secondary">{description}</Typography>
                         <Typography variant="body1" color="text.secondary">${price}</Typography>
                     </CardContent>
-                </CardActionArea>
-                <ItemCount initial={0} stock={stock} onAdd={handleOnAdd} />
+                    <Switch onClick={() => setTypeInput(!typeInput)} defaultChecked />
+                </CardActionArea> 
+                {quantity > 0 ?<Button variant="contained"> <Link to='/cart'>Ir al carrito</Link></Button> : <Count onAdd={handleAdd} stock={stock}/> }
             </Card>
         </div>
     );

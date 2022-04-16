@@ -1,11 +1,11 @@
 import Item from '../Item/Item'
-import Grid from '@mui/material/Grid'
+import './ItemList.css'
 
 const ItemList = ({ products }) => {
     return (
-        <Grid container direction="column" justifyContent="center">
+        <div className='ItemListContainer'>
             {products.map(prod => <Item key={prod.id} {...prod} />)}
-        </Grid >
+        </div>
     )
 }
 

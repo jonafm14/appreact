@@ -5,12 +5,11 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import Avatar from '@mui/material/Avatar';
 import { grey } from '@mui/material/colors';
 
-const ItemCount = ({ initial, stock, onAdd }) => {
-    const [count, setCount] = useState(0);
-    const [producto, setProducto] = useState(initial)
+const ItemCount = ({ stock, onAdd }) => {
+    const [count, setCount] = useState(1);
 
     const decrement = () => {
-        if (count > 0) {
+        if (count > 1) {
             setCount(count - 1)
         }
     }
