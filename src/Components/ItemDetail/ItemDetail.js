@@ -34,15 +34,14 @@ const InputCount = ({onAdd, stock, initial=1}) => {
 
 
 
-const ItemDetail = ({id, name, img, description, price, stock }) => {
+const ItemDetail = ({id, name, img, description, price, stock, setCart, cart}) => {
     const [typeInput, setTypeInput] = useState(true)
-    
     const handleAdd = (count) => {
+        const objProd = {id, name, price, quantity}
         setQuantity(count)
+        setCart([...cart, objProd])
     }
-
     const Count = typeInput ? ItemCount : InputCount
-
     const [quantity, setQuantity] =useState(0)
 
     return (
