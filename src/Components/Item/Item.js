@@ -6,8 +6,8 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const Item = ({id,name,img,description}) => {
+  
   return (
-    
     <Card sx={{ maxWidth: 345 }} >
       <CardActionArea>
         <CardMedia
