@@ -1,0 +1,38 @@
+
+
+.vacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+.cartContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartContainer__ul{
+    list-style: none;
+    width: 100%;
+    background-color: rgb(136, 136, 136);
+    border: 3px solid rgb(98, 98, 98);
+}
+
+.cartContainer__ul li {
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid rgb(98, 98, 98);
+}
+
+h4 {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+p {
+    padding: 0 10px;
+}

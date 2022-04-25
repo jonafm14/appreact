@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    color: #fff;
 }
 
 
@@ -23,6 +22,10 @@
     align-self: center;
 }
 
+.headerNav__logo h3 {
+    color: #fff;
+}
+
 .headerNav__buscador {
     grid-area: buscador;
     justify-self: center;
@@ -41,6 +44,7 @@
 
 .headerNav__cuenta a {
     padding-right: 20px;
+    color: #fff;
 }
 
 .headerNav__categorias {
@@ -52,6 +56,7 @@
     display: flex;
     justify-content: center;
 }
+
 
 .headerNav__categorias__links li{
     padding: 0px 20px;
@@ -72,4 +77,5 @@
     padding: 0px 20px;
     text-decoration: none;
     list-style: none;
+    color: #fff;
 }

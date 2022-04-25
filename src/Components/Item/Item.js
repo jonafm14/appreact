@@ -26,7 +26,7 @@ const Item = ({id,name,img,description}) => {
       </CardActionArea>
       <CardActions>
         <Button variant="contained" >
-          <Link to={`/detail/${id}`} >Ver detalle</Link>
+          <Link className='blanco' to={`/detail/${id}`} >Ver detalle</Link>
         </Button>
       </CardActions>
     </Card>
@@ -34,19 +34,3 @@ const Item = ({id,name,img,description}) => {
 }
 
 export default Item
-
-
-
-
-
-const sada = ({name,img}) => {
-    return (
-        <section>
-            <picture>
-                <img src={img} alt={name}/>
-            </picture>
-            <h3>{name}</h3>
-            <button>Ver detalle</button>
-        </section>
-    )
-}

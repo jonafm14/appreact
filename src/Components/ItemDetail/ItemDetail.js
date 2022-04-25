@@ -40,7 +40,7 @@ const ItemDetail = ({id, name, img, description, price, stock}) => {
                 </CardActionArea> 
                 {
                     isInCart(id)
-                    ? <Button variant="contained"><Link to='/cart'>Ir al carrito</Link></Button>
+                    ? <Button variant="contained"><Link className='blanco' to='/cart'>Ir al carrito</Link></Button>
                     :<ItemCount onAdd={handleAdd} stock={stock}/>
                 }
             </Card>

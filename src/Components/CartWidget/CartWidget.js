@@ -2,6 +2,7 @@ import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CartContext from '../../Context/CartContext';
 import { useContext } from 'react';
+import './CartWidget.css'
 
 const CartWidger = () => {
 
@@ -10,7 +11,7 @@ const CartWidger = () => {
     return(
         <div>
         <Badge badgeContent={getQuantity()} color="primary">
-            <ShoppingCartIcon color="action" />
+            <ShoppingCartIcon className='blanco' />
         </Badge>
         </div>
     )
