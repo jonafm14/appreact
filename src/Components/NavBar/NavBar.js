@@ -1,15 +1,19 @@
 import CartWidger from '../CartWidget/CartWidget';
 import './NavBar.css'
 import { useState ,useEffect } from 'react';
-import { getCategories } from '../asyncmock';
 import { Link, NavLink } from 'react-router-dom';
+import { firestoreDb } from '../../services/firebase'
+import { getDocs, collection} from 'firebase/firestore'
 
 const NavBar = () => {
     const [categories, setCategories] = useState([])
     useEffect(()=> {
-        getCategories().then(categories => {
-            setCategories(categories)
+        getDocs(collection(firestoreDb, 'categories')).then(response => {
+            const categories = response.docs.map(doc => {
+                return { id: doc.id, ...doc.data()}
         })
+        setCategories(categories)
+    })
     }, [])
 
     return (
@@ -33,4 +37,5 @@ const NavBar = () => {
         </div>
     )
 }
+
 export default NavBar;

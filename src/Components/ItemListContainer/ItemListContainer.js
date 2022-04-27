@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import './ItemListContainer.css';
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
@@ -29,11 +28,9 @@ const ItemListContainer = (props) => {
     }
 
     return (
-        <div className="container">
-            <div className="container__div">
-                <ItemList products={products} className="container__productos" />
+            <div>
+                <ItemList products={products}  />
             </div>
-        </div>
     )
 }
 
