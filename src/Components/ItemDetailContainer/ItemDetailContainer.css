@@ -1,14 +1,8 @@
-.container__productos {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .container {
     display: flex;
     justify-content: center;
 }
 
 .container__div{
-    width: 90%;
     margin-top: 30px;
 }

@@ -24,11 +24,11 @@ const ItemCount = ({ stock, onAdd }) => {
         <div>
             <div className='divBotones'>
                 <ButtonGroup disableElevation variant="contained">
+                <Button onClick={decrement} className='boton botonResta' variant="contained" color="error" size="medium">-</Button>
                     <Avatar sx={{ bgcolor: grey[500] }} variant="rounded">
                         <p>{count}</p>
                     </Avatar>
                     <Button onClick={increment} className='boton botonSuma' variant="contained" color="success" size="medium">+</Button>
-                    <Button onClick={decrement} className='boton botonResta' variant="contained" color="error" size="medium">-</Button>
                     <Button onClick={() => onAdd(count)} ><AddShoppingCartIcon fontSize="medium"></AddShoppingCartIcon></Button>
                 </ButtonGroup>
 
