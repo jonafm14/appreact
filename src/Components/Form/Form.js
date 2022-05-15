@@ -21,9 +21,13 @@ const Form = () => {
     const [nombre, setNombre] = useState('')
     const [numero, setNumero] = useState('')
     const [email, setEmail] = useState('')
+    const [email2, setEmail2] = useState('')
 
 
     const createOrder = () => {
+        const objOrder2 = {
+            email: email2
+        }
 
         const objOrder = {
             items: cart,
@@ -44,7 +48,7 @@ const Form = () => {
 
         const outOfStock = [];
 
-        if (objOrder.buyer.name !== "" && objOrder.buyer.email !== "" && objOrder.buyer.numero !== "") {
+        if (objOrder.buyer.name !== "" && objOrder.buyer.email !== "" && objOrder.buyer.numero !== "" && objOrder.buyer.email == objOrder2.email) {
             getDocs(query(collectionRef, where(documentId(), 'in', ids)))
                 .then(response => {
                     response.docs.forEach(doc => {
@@ -71,7 +75,7 @@ const Form = () => {
                     console.log(error)
                 })
         } else {
-            toast.error('Se tienen que completar todos los campos')
+            toast.error('Se tienen que completar todos los campos o los emails no coinciden')
         }
 
 
@@ -91,6 +95,10 @@ const Form = () => {
                 <FormControl required>
                     <InputLabel htmlFor="my-input">Email</InputLabel>
                     <Input id="my-inputEmail" aria-describedby="my-helper-text" type="email" label="Email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </FormControl>
+                <FormControl required>
+                    <InputLabel htmlFor="my-input">Repetir Email</InputLabel>
+                    <Input id="my-inputEmail" aria-describedby="my-helper-text" type="email" label="Email" name="email" value={email2} onChange={(e) => setEmail2(e.target.value)}/>
                 </FormControl>
                 <div className="containerForm">
                     <Button variant="contained" onClick={() => { createOrder() }} className="Button">Generar Orden</Button>
